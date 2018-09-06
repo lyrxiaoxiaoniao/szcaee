@@ -1,0 +1,102 @@
+@for $i from 1 through 6 {
+  .mt-#{$i*5} {
+    margin-top: (5px * $i);
+  }
+  .mb-#{$i*5} {
+    margin-bottom: (5px * $i);
+  }
+  .ml-#{$i*5} {
+    margin-left: (5px * $i);
+  }
+  .mr-#{$i*5} {
+    margin-right: (5px * $i);
+  }
+  .pt-#{$i*5} {
+    padding-top: (5px * $i);
+  }
+  .pb-#{$i*5} {
+    padding-bottom: (5px * $i);
+  }
+  .pl-#{$i*5} {
+    padding-left: (5px * $i);
+  }
+  .pr-#{$i*5} {
+    padding-right: (5px * $i);
+  }
+}
+
+@for $i from 10 through 30 {
+  .font-#{$i} {
+    font-size: $i + px;
+  }
+}
+@mixin clearfix {
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin scrollBar {
+  &::-webkit-scrollbar-track-piece {
+    background: #d3dce6;
+  }
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #99a9bf;
+    border-radius: 20px;
+  }
+}
+
+@mixin relative {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin pct($pct) {
+  width: #{$pct};
+  position: relative;
+  margin: 0 auto;
+}
+@mixin paw($paw) {
+  width: #{$paw};
+  position: absolute;
+  top: 0;
+}
+@mixin ellipsis($sum) {
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $sum;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin triangle($width, $height, $color, $direction) {
+  $width: $width/2;
+  $color-border-style: $height solid $color;
+  $transparent-border-style: $width solid transparent;
+  height: 0;
+  width: 0;
+  @if $direction==up {
+    border-bottom: $color-border-style;
+    border-left: $transparent-border-style;
+    border-right: $transparent-border-style;
+  } @else if $direction==right {
+    border-left: $color-border-style;
+    border-top: $transparent-border-style;
+    border-bottom: $transparent-border-style;
+  } @else if $direction==down {
+    border-top: $color-border-style;
+    border-left: $transparent-border-style;
+    border-right: $transparent-border-style;
+  } @else if $direction==left {
+    border-right: $color-border-style;
+    border-top: $transparent-border-style;
+    border-bottom: $transparent-border-style;
+  }
+}

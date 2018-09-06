@@ -1,33 +1,30 @@
 /**
  * @fileOverview app配置
  * @author liuyouren
- * @date 2018/08/17
+ * @date 2018/09/04
  */
 
-const path = require('path')
-const debug = process.env.NODE_ENV !== 'production'
-const VueConf = require('./src/assets/js/libs/vue_config_class')
-const vueConf = new VueConf(process.argv)
+const fs = require('fs');
+const path = require('path');
+const debug = process.env.NODE_ENV !== 'production';
+const VueConf = require('./src/config/js/vue_config_class');
+const vueConf = new VueConf(process.argv);
 // const baseURI = 'https://www.oss.com' // 这里可以配置oss/cdn路径
-const baseURI = ''
-// console.log(process.argv, 'process.argv')
-// console.log(baseURI + vueConf.baseUrl, 'baseURI + vueConf.baseUrl')
-console.log('')
+const baseURI = '';
+console.log('');
 console.log(
   '----------------------本地启动或构建的文件信息 | start-----------------------------'
-)
-console.log(vueConf.pages)
+);
+console.log(vueConf.pages);
 console.log(
   '----------------------本地启动或构建的文件信息 | end-------------------------------'
-)
-console.log('')
+);
+console.log('');
 
 module.exports = {
   baseUrl: baseURI + vueConf.baseUrl, // 根域上下文目录
-  // outputDir: 'dist', // 构建输出目录
   outputDir: `dist/${process.argv.slice(3)}`, // 构建输出目录
-  assetsDir: 'assets', // 静态资源目录 (js, css, img, fonts)
-  // assetsDir: 'static', // 静态资源目录 (js, css, img, fonts)
+  assetsDir: 'activity', // 静态资源目录 (js, css, img, fonts)
   pages: vueConf.pages,
   lintOnSave: true, // 是否开启eslint保存检测，有效值：ture | false | 'error'
   runtimeCompiler: true, // 运行时版本是否需要编译
@@ -37,7 +34,7 @@ module.exports = {
     // webpack配置，值位对象时会合并配置，为方法时会改写配置
     if (debug) {
       // 开发环境配置
-      config.devtool = 'cheap-module-eval-source-map'
+      config.devtool = 'cheap-module-eval-source-map';
     } else {
       // 生产环境配置
     }
@@ -48,13 +45,16 @@ module.exports = {
         alias: {
           '@': path.resolve(__dirname, './src'),
           '@c': path.resolve(__dirname, './src/components'),
+          '@scss': path.resolve(__dirname, './src/styles'),
           vue$: 'vue/dist/vue.esm.js'
         }
       }
-    })
+    });
   },
   chainWebpack: config => {
     // webpack链接API，用于生成和修改webapck配置，https://github.com/vuejs/vue-cli/blob/dev/docs/webpack.md
+    // exreenals 配合cdn 外部引用 减少打包体积
+    config.output.libraryTarget('umd');
     config.externals({
       jquery: {
         root: 'jQuery',
@@ -63,7 +63,17 @@ module.exports = {
         commonjs2: 'jquery',
         amd: 'jquery'
       }
-    })
+    });
+    // element-ui 字体图标超过了大小限制，重新修改大小限制
+    config.module
+      .rule('fonts')
+      .test(/\.(woff2?|eot|ttf|otf)(\?.*)?$/i)
+      .use('url-loader')
+      .loader('url-loader')
+      .options({
+        limit: '100000',
+        name: `dist/${process.argv.slice(3)}/activity`
+      });
     if (debug) {
       // 本地开发配置
     } else {
@@ -81,6 +91,10 @@ module.exports = {
       css: {
         localIdentName: '[name]-[hash]',
         camelCase: 'only'
+      },
+      sass: {
+        // 引入全局的sass文件
+        data: fs.readFileSync('src/styles/common.scss', 'utf-8')
       },
       stylus: {}
     }
@@ -109,4 +123,4 @@ module.exports = {
     },
     before: app => {}
   }
-}
+};

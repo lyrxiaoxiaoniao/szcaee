@@ -2,7 +2,7 @@
 /**
  * @fileOverview app配置数据处理类
  * @author liuyouren
- * @date 2018/08/17
+ * @date 2018/09/04
  * 本类为config.app.js提供基础服务，
  * 主要业务为对外应用信息、页面信息、页面URL信息、baseUrl信息以及应用和页面是否存在校验服务
  */
@@ -14,7 +14,7 @@ const [
   parseUrl,
   exists
 ] = [
-  require('./../../../config.app'),
+  require('../../config.app'),
   Symbol.for('resolveConf'),
   Symbol.for('fnRecursive'),
   Symbol.for('parseUrl'),

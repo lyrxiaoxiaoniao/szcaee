@@ -1,36 +1,40 @@
 <template>
-    <div class="name">测试一下{{masg}}
-      <el-col>{{date | parseTime('{y}-{m}-{d} {a} {h}:{i}:{s}')}}</el-col>
-      <el-col>{{time | timeAgo}}</el-col>
-    </div>
+  <div class="platform">
+    <back-top :height='150' :bottom="200"></back-top>
+    <p-header class="p-header"></p-header>
+    <p-banner></p-banner>
+    <p-container></p-container>
+    <p-footer></p-footer>
+  </div>
 </template>
-
 <script>
-import $aa from 'jquery'
-import http from '@/api/index.js'
+import PHeader from './Header';
+import PFooter from './Footer';
+import PContainer from './Container';
+import PBanner from './Banner';
+import BackTop from './component/back-top-new';
 export default {
+  components: {
+    PHeader,
+    PFooter,
+    PContainer,
+    PBanner,
+    BackTop
+  },
   data() {
-    return {
-      masg: 'nimei',
-      date: Date.now(),
-      time: 1534821065
-    }
-  },
-  mounted() {
-    this.getData()
-  },
-  methods: {
-    async getData() {
-      try {
-        console.log(12312312)
-        const a = $aa('.name')
-        console.log(a)
-        const api = await http.GET('/health')
-      } catch (error) {}
-    }
+    return {};
   }
-}
+};
 </script>
 
-<style>
+<style lang="scss" scoped>
+.platform {
+  position: relative;
+  padding-top: 105px;
+  .p-header {
+    position: fixed;
+    top: 0;
+    border-bottom: 1px solid #f5f5f5;
+  }
+}
 </style>
