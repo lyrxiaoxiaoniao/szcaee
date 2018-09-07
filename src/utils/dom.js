@@ -1,7 +1,7 @@
 import Vue from 'vue';
+// 判断是否为服务端渲染
 const isServer = Vue.prototype.$isServer;
 
-/* istanbul ignore next */
 export const on = (function() {
   if (!isServer && document.addEventListener) {
     return function(element, event, handler) {
@@ -18,7 +18,6 @@ export const on = (function() {
   }
 })();
 
-/* istanbul ignore next */
 export const off = (function() {
   if (!isServer && document.removeEventListener) {
     return function(element, event, handler) {
