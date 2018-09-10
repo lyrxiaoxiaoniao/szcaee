@@ -10,8 +10,8 @@
   </transition>
 </template>
 <script>
-import { scrollTop } from '../../../../utils';
-import { on, off } from '../../../../utils/dom';
+import { scrollTop } from '@utils';
+import { on, off } from '@utils/dom';
 const prefixCls = 'ivu-back-top';
 export default {
   props: {

@@ -1,22 +1,31 @@
 <template>
   <div id="banner">
-    <div @click="getData" class="container">
-      <img src="../../../assets/banner.jpg" alt="">
+    <div class="container">
+      <el-carousel :interval="4000" height="350px">
+        <el-carousel-item v-for="item in 6" :key="item">
+          <img src="../../../assets/banner.jpg" alt="文交所">
+        </el-carousel-item>
+      </el-carousel>
     </div>
   </div>
 </template>
 
 <script>
-import $http from '@/api';
+// import $http from '@/api';
+import {Carousel, CarouselItem} from 'element-ui';
 export default {
   name: 'p-banner',
+  components: {
+    [Carousel.name]: Carousel,
+    [CarouselItem.name]: CarouselItem
+  },
   methods: {
-    async getData() {
-      try {
-        const app = $http.GET('/health')
-        console.log(app);
-      } catch (error) {}
-    }
+    // async getData() {
+    //   try {
+    //     const app = $http.GET('/health')
+    //     console.log(app);
+    //   } catch (error) {}
+    // }
   }
 };
 </script>
@@ -25,7 +34,7 @@ export default {
 // @import '@scss/common.scss';
 #banner {
   @extend .w100;
-  height: 390px;
+  height: 350px;
   .container {
     @extend .w;
     height: 100%;

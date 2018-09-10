@@ -34,6 +34,7 @@ export default {
   .p-header {
     position: fixed;
     top: 0;
+    z-index: 99;
     border-bottom: 1px solid #f5f5f5;
   }
 }
