@@ -3,7 +3,7 @@
     <div class="container">
       <el-carousel :interval="4000" height="350px">
         <el-carousel-item v-for="item in 6" :key="item">
-          <img src="../../../assets/banner.jpg" alt="文交所">
+          <img src="../assets/banner.jpg" alt="文交所">
         </el-carousel-item>
       </el-carousel>
     </div>

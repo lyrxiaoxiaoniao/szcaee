@@ -8,11 +8,11 @@
   </div>
 </template>
 <script>
-import PHeader from './Header';
-import PFooter from './Footer';
+import PHeader from '@/dash/Header';
+import PFooter from '@/dash/Footer';
 import PContainer from './Container';
-import PBanner from './Banner';
-import BackTop from './component/back-top-new';
+import PBanner from '@/dash/Banner';
+import BackTop from '@c/back-top-new';
 export default {
   components: {
     PHeader,

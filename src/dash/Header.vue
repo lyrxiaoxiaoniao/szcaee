@@ -3,7 +3,7 @@
     <div class="container clearfix">
       <div class="container-logo">
         <a href="javascript:;">
-          <img src="../../../assets/logo.png" alt="">
+          <img src="../assets/logo.png" alt="">
         </a>
       </div>
       <div class="container-topbar">
@@ -52,7 +52,6 @@
 </template>
 
 <script>
-import { scrollTop } from '@utils';
 import { on, off } from '@utils/dom';
 import { Menu, MenuItem, Submenu, Input } from 'element-ui';
 export default {
@@ -72,15 +71,11 @@ export default {
   },
   mounted() {
     // window.addEventListener('scroll', this.handleScroll, false);
-    // window.addEventListener('resize', this.handleScroll, false);
     on(window, 'scroll', this.handleScroll);
-    on(window, 'resize', this.handleScroll);
   },
   beforeDestroy() {
     // window.removeEventListener('scroll', this.handleScroll, false);
-    // window.removeEventListener('resize', this.handleScroll, false);
     off(window, 'scroll', this.handleScroll);
-    off(window, 'resize', this.handleScroll);
   },
   methods: {
     handleSelect() {},
@@ -135,8 +130,10 @@ header {
   }
 }
 .scollto {
-  box-shadow: 0 4px 12px 0 rgba(52, 63, 75, 0.06),
-    0 10px 40px 0 rgba(52, 63, 75, 0.06), 0 0 0 1px rgba(52, 63, 75, 0.02);
+  // box-shadow: 0 4px 12px 0 rgba(52, 63, 75, 0.06),
+  //   0 10px 40px 0 rgba(52, 63, 75, 0.06), 0 0 0 1px rgba(52, 63, 75, 0.02);
+  box-shadow: 0 4px 12px 0 rgba(153, 51, 0, 0.06),
+    0 10px 40px 0 rgba(153, 51, 0, 0.06), 0 0 0 1px rgba(153, 51, 0, 0.02);
 }
 </style>
 <style lang="scss" scoped>
