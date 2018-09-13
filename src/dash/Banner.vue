@@ -11,22 +11,14 @@
 </template>
 
 <script>
-// import $http from '@/api';
-import {Carousel, CarouselItem} from 'element-ui';
+import { Carousel, CarouselItem } from 'element-ui';
 export default {
   name: 'p-banner',
   components: {
     [Carousel.name]: Carousel,
     [CarouselItem.name]: CarouselItem
   },
-  methods: {
-    // async getData() {
-    //   try {
-    //     const app = $http.GET('/health')
-    //     console.log(app);
-    //   } catch (error) {}
-    // }
-  }
+  methods: {}
 };
 </script>
 
@@ -38,7 +30,7 @@ export default {
   .container {
     @extend .w;
     height: 100%;
-    img{
+    img {
       width: 100%;
       height: 100%;
     }

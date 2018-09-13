@@ -35,8 +35,33 @@
       </div>
     </div>
     <!-- 托管方介绍 -->
+    <div class="pcontainer-item">
+      <div class="pcontainer-item_title">
+        <i class="el-icon-document"></i> 托管方介绍
+        <span class="look">查看更多>></span>
+      </div>
+      <img-card></img-card>
+      <img-card></img-card>
+      <img-card></img-card>
+    </div>
     <!-- 第三方合作运营机构介绍 -->
+    <div class="pcontainer-trusteeship">
+      <h2>第三方合作运营机构介绍</h2>
+      <div>
+        <img-left-card></img-left-card>
+        <img-left-card></img-left-card>
+        <img-left-card></img-left-card>
+      </div>
+    </div>
     <!-- 专委会介绍 -->
+    <div class="pcontainer-trusteeship">
+      <h2>专委会介绍</h2>
+      <div>
+        <hover-card></hover-card>
+        <hover-card></hover-card>
+        <hover-card></hover-card>
+      </div>
+    </div>
     <!-- 数据看板 -->
   </div>
 </template>
@@ -44,12 +69,19 @@
 <script>
 import BiddersTable from './component/bidders-table';
 import AgreementTable from './component/agreement-table';
+import ImgCard from '@c/img-card';
+import ImgLeftCard from '@c/img-left-card';
+import HoverCard from '@c/hover-card';
 import { Card, Button } from 'element-ui';
+
 export default {
   name: 'p-container',
   components: {
     BiddersTable,
     AgreementTable,
+    ImgCard,
+    ImgLeftCard,
+    HoverCard,
     [Card.name]: Card,
     [Button.name]: Button
   },
@@ -117,6 +149,11 @@ export default {
       display: block;
       object-fit: cover;
     }
+  }
+  &-trusteeship {
+    width: 100%;
+    padding-top: 15px;
+    border-top: 1px solid #f7f7f7;
   }
 }
 </style>
