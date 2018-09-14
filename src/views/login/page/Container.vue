@@ -43,23 +43,43 @@
       <img-card :cardData="item" v-for="item in datalist" :key="item.id" style="width: 380px;"></img-card>
     </div>
     <!-- 第三方合作运营机构介绍 -->
-    <div class="pcontainer-trusteeship">
+    <div class="pcontainer-item">
+      <div class="pcontainer-item_title">
+        <i class="el-icon-document"></i> 第三方合作运营机构介绍
+        <span class="look">查看更多>></span>
+      </div>
+      <img-left-card :cardData="listItem1" style="width: 300px;"></img-left-card>
+      <img-left-card :cardData="listItem2" style="width: 300px;"></img-left-card>
+      <img-left-card :cardData="listItem" style="width: 540px;"></img-left-card>
+    </div>
+
+    <!-- <div class="pcontainer-trusteeship">
       <h2>第三方合作运营机构介绍</h2>
       <div>
         <img-left-card :cardData="listItem1" style="width: 300px;"></img-left-card>
         <img-left-card :cardData="listItem2" style="width: 300px;"></img-left-card>
         <img-left-card :cardData="listItem" style="width: 540px;"></img-left-card>
       </div>
-    </div>
+    </div> -->
     <!-- 专委会介绍 -->
-    <div class="pcontainer-trusteeship">
+    <div class="pcontainer-item">
+      <div class="pcontainer-item_title">
+        <i class="el-icon-document"></i> 专委会介绍
+        <span class="look">查看更多>></span>
+      </div>
+      <hover-card :cardData="listItem1" style="width: 300px;"></hover-card>
+        <hover-card :cardData="listItem" style="width: 540px;"></hover-card>
+        <hover-card :cardData="listItem2" style="width: 300px;"></hover-card>
+    </div>
+
+    <!-- <div class="pcontainer-trusteeship">
       <h2>专委会介绍</h2>
       <div>
         <hover-card :cardData="listItem1" style="width: 300px;"></hover-card>
         <hover-card :cardData="listItem" style="width: 540px;"></hover-card>
         <hover-card :cardData="listItem2" style="width: 300px;"></hover-card>
       </div>
-    </div>
+    </div> -->
     <!-- 数据看板 -->
   </div>
 </template>
