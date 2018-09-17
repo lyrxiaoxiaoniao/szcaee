@@ -1,5 +1,15 @@
 <template>
   <div class="pcontainer">
+    <!-- 数据看板 -->
+    <div class="pcontainer-item">
+      <div class="pcontainer-item_title">
+        <i class="el-icon-document"></i> 数据看板
+        <span class="look">查看更多>></span>
+      </div>
+      <div class="pcontainer-item_content">
+        <data-card></data-card>
+      </div>
+    </div>
     <!-- 竞拍转让展示列表 -->
     <div class="pcontainer-item">
       <div class="pcontainer-item_title">
@@ -86,16 +96,7 @@
         <hover-card :cardData="listItem2" style="width: 300px;"></hover-card>
       </div>
     </div> -->
-    <!-- 数据看板 -->
-    <div class="pcontainer-item">
-      <div class="pcontainer-item_title">
-        <i class="el-icon-document"></i> 数据看板
-        <span class="look">查看更多>></span>
-      </div>
-      <div class="pcontainer-item_content">
-        <data-card></data-card>
-      </div>
-    </div>
+    
   </div>
 </template>
 
