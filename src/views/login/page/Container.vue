@@ -40,7 +40,9 @@
         <i class="el-icon-document"></i> 托管方介绍
         <span class="look">查看更多>></span>
       </div>
-      <img-card :cardData="item" v-for="item in datalist" :key="item.id" style="width: 380px;"></img-card>
+      <div class="pcontainer-item_content">
+        <img-card :cardData="item" v-for="item in datalist" :key="item.id" style="width: 380px;"></img-card>
+      </div>
     </div>
     <!-- 第三方合作运营机构介绍 -->
     <div class="pcontainer-item">
@@ -48,9 +50,11 @@
         <i class="el-icon-document"></i> 第三方合作运营机构介绍
         <span class="look">查看更多>></span>
       </div>
-      <img-left-card :cardData="listItem1" style="width: 300px;"></img-left-card>
-      <img-left-card :cardData="listItem2" style="width: 300px;"></img-left-card>
-      <img-left-card :cardData="listItem" style="width: 540px;"></img-left-card>
+      <div class="pcontainer-item_content">
+        <img-left-card :cardData="listItem1" style="width: 300px;"></img-left-card>
+        <img-left-card :cardData="listItem2" style="width: 300px;"></img-left-card>
+        <img-left-card :cardData="listItem" style="width: 540px;"></img-left-card>
+      </div>
     </div>
 
     <!-- <div class="pcontainer-trusteeship">
@@ -67,9 +71,11 @@
         <i class="el-icon-document"></i> 专委会介绍
         <span class="look">查看更多>></span>
       </div>
-      <hover-card :cardData="listItem1" style="width: 300px;"></hover-card>
+      <div class="pcontainer-item_content">
+        <hover-card :cardData="listItem1" style="width: 300px;"></hover-card>
         <hover-card :cardData="listItem" style="width: 540px;"></hover-card>
         <hover-card :cardData="listItem2" style="width: 300px;"></hover-card>
+      </div>
     </div>
 
     <!-- <div class="pcontainer-trusteeship">
@@ -81,6 +87,15 @@
       </div>
     </div> -->
     <!-- 数据看板 -->
+    <div class="pcontainer-item">
+      <div class="pcontainer-item_title">
+        <i class="el-icon-document"></i> 数据看板
+        <span class="look">查看更多>></span>
+      </div>
+      <div class="pcontainer-item_content">
+        <data-card></data-card>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -90,6 +105,7 @@ import AgreementTable from './component/agreement-table';
 import ImgCard from '@c/img-card';
 import ImgLeftCard from '@c/img-left-card';
 import HoverCard from '@c/hover-card';
+import DataCard from '@c/data-card';
 import { Card, Button } from 'element-ui';
 
 export default {
@@ -100,6 +116,7 @@ export default {
     ImgCard,
     ImgLeftCard,
     HoverCard,
+    DataCard,
     [Card.name]: Card,
     [Button.name]: Button
   },
@@ -164,7 +181,7 @@ export default {
   margin: 0 auto;
   padding-bottom: 25px;
   &-item {
-    margin-top: 15px;
+    margin: 15px 0;
     &_title {
       padding: 10px 0;
       font-size: 20px;
@@ -175,6 +192,9 @@ export default {
         color: #930;
         font-size: 16px;
       }
+    }
+    &_content{
+      padding-top: 20px;
     }
   }
   &-cards {

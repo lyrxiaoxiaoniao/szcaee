@@ -52,17 +52,14 @@ export default {
     z-index: 100;
     font-size: 14px;
     line-height: 1.5;
-    background-color: #de4f07;
-    opacity: .5;
+    background-color: #ff8038;
     transition: all .3s;
   }
 }
 .hovercard:hover {
-  // border-color: #de4f07;
   .active{
     top: 50px;
     left: 0;
-    opacity: .6;
     transition: top .5s;
   }
   .default{
