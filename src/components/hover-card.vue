@@ -36,15 +36,15 @@ export default {
     width: 100%;
     height: 100%;
   }
-  .default{
+  .default {
     text-align: center;
     font-size: 22px;
     color: #333;
     position: absolute;
     top: 0;
-    transition: all .3s;
+    transition: all 0.3s;
   }
-  .active{
+  .active {
     position: absolute;
     text-indent: 2em;
     color: #fff;
@@ -53,18 +53,18 @@ export default {
     font-size: 14px;
     line-height: 1.5;
     background-color: #ff8038;
-    transition: all .3s;
+    transition: all 0.3s;
   }
 }
 .hovercard:hover {
-  .active{
+  .active {
     top: 50px;
     left: 0;
-    transition: top .5s;
+    transition: top 0.5s;
   }
-  .default{
+  .default {
     top: -50px;
-    transition: top .5s ease;
+    transition: top 0.5s ease;
   }
 }
 </style>

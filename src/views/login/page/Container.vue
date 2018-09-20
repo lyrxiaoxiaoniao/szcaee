@@ -67,14 +67,6 @@
       </div>
     </div>
 
-    <!-- <div class="pcontainer-trusteeship">
-      <h2>第三方合作运营机构介绍</h2>
-      <div>
-        <img-left-card :cardData="listItem1" style="width: 300px;"></img-left-card>
-        <img-left-card :cardData="listItem2" style="width: 300px;"></img-left-card>
-        <img-left-card :cardData="listItem" style="width: 540px;"></img-left-card>
-      </div>
-    </div> -->
     <!-- 专委会介绍 -->
     <div class="pcontainer-item">
       <div class="pcontainer-item_title">
