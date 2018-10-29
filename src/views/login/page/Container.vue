@@ -79,7 +79,6 @@
         <hover-card :cardData="listItem2" style="width: 300px;"></hover-card>
       </div>
     </div>
-
     <!-- <div class="pcontainer-trusteeship">
       <h2>专委会介绍</h2>
       <div>
@@ -88,7 +87,6 @@
         <hover-card :cardData="listItem2" style="width: 300px;"></hover-card>
       </div>
     </div> -->
-    
   </div>
 </template>
 
