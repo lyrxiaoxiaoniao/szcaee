@@ -4,10 +4,16 @@
   </div>
 </template>
 <script>
-import page from './page';
+import page from "./page";
+import $http from "@/api";
 export default {
   components: { page },
-  methods: {}
+  methods: {},
+  mounted() {
+    $http.GET("/getdata").then(res => {
+      console.log(res);
+    });
+  }
 };
 </script>
 <style lang="scss">

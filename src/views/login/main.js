@@ -7,6 +7,7 @@ import * as filters from '../../filters/index'; // 全局过滤器
 import '../../styles/base.scss';
 // 单独引入部分element-ui {Loading, MessageBox, Message, Notification}全局提示组件
 import './tip';
+import '../../mock'
 // 注册全局实用程序过滤器（register global utility filters）.
 Object.keys(filters).forEach(key => {
   Vue.filter(key, filters[key]);
